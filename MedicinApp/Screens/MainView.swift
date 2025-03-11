@@ -13,21 +13,9 @@ struct MainView: View {
     
     // MARK: - BODY
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack {
-                backgroundColor
                 VStack(spacing: 0) {
-                    // MARK: - TOP
-                    NavBarView()
-                        .padding(.horizontal, 15)
-                        .padding(.top, 10)
-                        .padding(.bottom, 15)
-                        .background(
-                            Color.colorTealLight
-                                .clipShape(CustomShapeBottom())
-                                .ignoresSafeArea()
-                            
-                        )
                     // MARK: - CENTER
                     ZStack{
                         Color.colorTealLight
@@ -35,6 +23,7 @@ struct MainView: View {
                             BannerTabView()
                                 .frame(minHeight: 256)
                                 .padding(.vertical, 20)
+                                .offset(y: 50)
                             VStack(alignment: .center, spacing: 15) {
                                 // MARK: - SECTIONS
                                 TitleView(title: "Gestionate")
@@ -42,8 +31,7 @@ struct MainView: View {
                                 
                                 //Herramientas
                                 TitleView(title: "Heramientas")
-                                ToolGridView()
-                                
+                                ToolGridView()                                
                                 TitleView(title: "Nuestros Profesionales")
                                 
                                 // MARK: - DOCTORS
@@ -54,13 +42,30 @@ struct MainView: View {
                             backgroundColor
                                 .clipShape(CustomShapeTop())
                         )
+                        .clipShape(CustomShapeTop())
+                        .clipped()
                     }//: ZSTACK
+                    
 
                 }//: VSTACK
-                
+                .overlay(content: {
+                    // MARK: - TOP
+                    VStack{
+                        NavBarView()
+                            .padding(.horizontal, 15)
+                            .padding(.top, 10)
+                            .padding(.bottom, 15)
+                            .background(
+                                Color.colorTealLight
+                                    .clipShape(CustomShapeBottom())
+                                    .ignoresSafeArea()
+                            )
+                        Spacer()
+                    }
+                })
             }//: ZSTACK
             
-        }//: NAVIGATIONVIEW
+        }//: NAVIGATIONSTACK
         .navigationViewStyle(StackNavigationViewStyle())
         .navigationTitle("")
     }

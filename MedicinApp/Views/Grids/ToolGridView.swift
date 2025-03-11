@@ -55,7 +55,6 @@ struct ToolGridView: View {
                                 
                             )
                         Text("Calcula tu porcentaje de grasa")
-                            
                             .frame(maxWidth: 150)
                             .font(.subheadline)
                             .fontWeight(.black)
@@ -66,7 +65,7 @@ struct ToolGridView: View {
                 }//:NAVLINK
                 
             })//: GRID
-            //.frame(height: 200)
+            .frame(height: 210)
             .padding(.horizontal, 15)
             .padding(.vertical, 5)
         }
@@ -74,5 +73,7 @@ struct ToolGridView: View {
 }
 
 #Preview {
-    ToolGridView()
+    ScrollView {
+        ToolGridView()
+    }
 }

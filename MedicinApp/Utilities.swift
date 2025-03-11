@@ -57,6 +57,6 @@ let Doctors: [Doctor] = [
     Doctor(name: "Sonia", specialty: "Ginecología", photo: "Doctor-5"),
     Doctor(name: "Arnold", specialty: "Urología", photo: "Doctor-6"),
     Doctor(name: "Kevin", specialty: "Cardiología", photo: "Doctor-7"),
-    Doctor(name: "Veronica", specialty: "Cirujia", photo: "Doctor-8")
+    Doctor(name: "Veronica", specialty: "Cirugia", photo: "Doctor-8")
 
 ]
